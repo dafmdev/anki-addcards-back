@@ -1,0 +1,18 @@
+{
+  "action": "guiAddCards",
+  "version": 6,
+  "params": {
+    "note": {
+      "deckName": "Japanese::Tokyo",
+      "modelName": "TypeEnglish",
+      "fields": {
+        "Front": "Rices",
+        "Back": "Arroz",
+        "Reading": "/rʌɪs/"
+      },
+      "tags": [
+        "dafmdev"
+      ]
+    }
+  }
+}
