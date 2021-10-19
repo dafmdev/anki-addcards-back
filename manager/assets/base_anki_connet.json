@@ -3,15 +3,24 @@
   "version": 6,
   "params": {
     "note": {
-      "deckName": "Japanese::Tokyo",
+      "deckName": "",
       "modelName": "TypeEnglish",
       "fields": {
-        "Front": "Rices",
-        "Back": "Arroz",
-        "Reading": "/rʌɪs/"
+        "Front": "",
+        "Back": "",
+        "Reading": ""
       },
       "tags": [
         "dafmdev"
+      ],
+      "audio": [
+        {
+          "url": "",
+          "filename": "",
+          "fields": [
+            "Audio"
+          ]
+        }
       ]
     }
   }
