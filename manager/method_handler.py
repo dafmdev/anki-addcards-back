@@ -31,7 +31,7 @@ class MethodHandler:
 
 
     def detect_modules(self, info: Dict[str, str], recipe: Dict[str, bool]) -> dict:
-
+        create_card = recipe.get('create_card', False)
         text_en: str = ""
         text_es: str = ""
         text_ipa: str = ""
@@ -45,7 +45,7 @@ class MethodHandler:
             text_ipa = self.create_ipa.create_ipa(info['ipa_shape'], text_en)
         if recipe['polly'] is True:
             url_file_polly, name_file_polly = self.create_sound.create_sound(info['text'])
-        if recipe['create_card'] is True:
+        if create_card is True:
             status_create_card = self.create_card.create_card(info['desk_name'], text_en, text_es, text_ipa, url_file_polly, name_file_polly)
 
         return self.format_response(text_en, text_es, text_ipa, url_file_polly, status_create_card)

@@ -1,0 +1,19 @@
+/*
+Headers
+
+ACCESS_KEY=""
+SECRET_KEY=""
+REGION_NAME=""
+BUCKETS_NAME=""
+*/
+
+{
+    "text": "want",
+    "language": "en",
+    "config": {
+        "translate": true,
+        "ipa": true,
+        "polly": true,
+        "example": false
+    }
+}

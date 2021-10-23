@@ -19,7 +19,5 @@ class CreateCard:
         self.data['params']['note']['audio'][0]['url'] = url_file_polly
         self.data['params']['note']['audio'][0]['filename'] = name_file_polly.lower()
 
-        time.sleep(20)
-
         r = requests.post(self.url, data=json.dumps(self.data), headers=self.headers)
         return str(r)
