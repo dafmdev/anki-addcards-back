@@ -15,13 +15,13 @@ class MethodHandler:
 
         response = {}
         if text_en:
-            response['english'] = text_en
+            response['en'] = text_en
         if text_es:
-            response['spanish'] = text_es
+            response['es'] = text_es
         if text_ipa:
             response['ipa'] = text_ipa
         if url_file_polly:
-            response['url_file_polly'] = url_file_polly
+            response['url_sound'] = url_file_polly
 
         return response
 
@@ -36,7 +36,7 @@ class MethodHandler:
         if recipe['translate'] is True:
             text_en, text_es = self.create_text.create_text(info['text'], info['language'])
         if recipe['ipa'] is True:
-            text_ipa = self.create_ipa.create_ipa(info['ipa_shape'], text_en)
+            text_ipa = self.create_ipa.create_ipa(text_en)
         if recipe['polly'] is True:
             url_file_polly, name_file_polly = self.create_sound.create_sound(info['text'])
 

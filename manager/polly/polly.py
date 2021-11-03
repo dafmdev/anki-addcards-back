@@ -10,7 +10,6 @@ class CreateSound:
         self.SECRET_KEY = os.environ['SECRET_KEY']
         self.REGION_NAME = os.environ['REGION_NAME']
         self.BUCKETS_NAME = os.environ['BUCKETS_NAME']
-        self.ROOT = os.environ['ROOT']
         self.polly_client = boto3.Session(aws_access_key_id=self.ACCESS_KEY,
                                           aws_secret_access_key=self.SECRET_KEY,
                                           region_name=self.REGION_NAME).client('polly')
