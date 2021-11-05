@@ -27,11 +27,8 @@ class CreateSound:
             VoiceId='Salli',
             Text=text)
         task_id = response['SynthesisTask']['TaskId'] + ".mp3"
-        name_file = text.replace(" ", "_") + ".mp3"
 
-        print(task_id, name_file)
-
-        return task_id, name_file
+        return task_id
 
 
     def get_url_sound(self, object_name: str, expiration=600):
@@ -43,7 +40,7 @@ class CreateSound:
             return None
         return response
 
-    def create_sound(self, text):
-        task_id, name_file = self.polly_task(text)
+    def create_sound(self, text, AWS_KEY: dict):
+        task_id = self.polly_task(text)
         url_file_sound = self.get_url_sound(task_id)
-        return url_file_sound, name_file
+        return url_file_sound

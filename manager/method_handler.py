@@ -31,14 +31,13 @@ class MethodHandler:
         text_es: str = ""
         text_ipa: str = ""
         url_file_polly: str = ""
-        name_file_polly: str = ""
 
         if recipe['translate'] is True:
             text_en, text_es = self.create_text.create_text(info['text'], info['language'])
         if recipe['ipa'] is True:
             text_ipa = self.create_ipa.create_ipa(text_en)
         if recipe['polly'] is True:
-            url_file_polly, name_file_polly = self.create_sound.create_sound(info['text'])
+            url_file_polly = self.create_sound.create_sound(info['text'])
 
         return self.format_response(text_en, text_es, text_ipa, url_file_polly)
 
