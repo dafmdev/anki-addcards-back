@@ -25,11 +25,8 @@ def read_root():
 @app.post("/create_card")
 def create_card(params: CreateCard, request: Request):
 
-    AWS_KEY = {}
-    AWS_KEY['ACCESS_KEY'] = request.headers.get('ACCESS_KEY')
-    AWS_KEY['SECRET_KEY'] = request.headers.get('SECRET_KEY')
-    AWS_KEY['REGION_NAME'] = request.headers.get('REGION_NAME')
-    AWS_KEY['BUCKETS_NAME'] = request.headers.get('BUCKETS_NAME')
+    AWS_KEY = {'ACCESS_KEY': request.headers.get('ACCESS_KEY'), 'SECRET_KEY': request.headers.get('SECRET_KEY'),
+               'REGION_NAME': request.headers.get('REGION_NAME'), 'BUCKETS_NAME': request.headers.get('BUCKETS_NAME')}
     create_environment_variables(AWS_KEY)
 
     parameters = {
