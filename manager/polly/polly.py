@@ -3,6 +3,7 @@ import os
 import boto3
 from botocore.exceptions import ClientError
 
+
 class CreateSound:
 
     def __init__(self):
@@ -14,8 +15,8 @@ class CreateSound:
                                           aws_secret_access_key=self.SECRET_KEY,
                                           region_name=self.REGION_NAME).client('polly')
         self.s3_client = boto3.Session(aws_access_key_id=self.ACCESS_KEY,
-                                         aws_secret_access_key=self.SECRET_KEY,
-                                         region_name=self.REGION_NAME).client('s3')
+                                       aws_secret_access_key=self.SECRET_KEY,
+                                       region_name=self.REGION_NAME).client('s3')
 
     def polly_task(self, text: str):
         response = self.polly_client.start_speech_synthesis_task(
@@ -30,10 +31,10 @@ class CreateSound:
 
         return task_id
 
-
     def get_url_sound(self, object_name: str, expiration=600):
         try:
-            response = self.s3_client.generate_presigned_url(ClientMethod='get_object', Params={'Bucket': self.BUCKETS_NAME, 'Key': object_name},
+            response = self.s3_client.generate_presigned_url(ClientMethod='get_object',
+                                                             Params={'Bucket': self.BUCKETS_NAME, 'Key': object_name},
                                                              ExpiresIn=expiration)
         except ClientError as e:
             logging.error(e)

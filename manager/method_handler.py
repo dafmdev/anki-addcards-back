@@ -25,7 +25,6 @@ class MethodHandler:
 
         return response
 
-
     def detect_modules(self, info: Dict[str, str], recipe: Dict[str, bool]) -> dict:
         text_en: str = ""
         text_es: str = ""
@@ -40,4 +39,3 @@ class MethodHandler:
             url_file_polly = self.create_sound.create_sound(info['text'])
 
         return self.format_response(text_en, text_es, text_ipa, url_file_polly)
-

@@ -1,6 +1,7 @@
 from typing import Tuple, Union
 from deep_translator import GoogleTranslator
 
+
 class CreateText:
 
     def translate_to_es(self, text_en: str) -> str:
