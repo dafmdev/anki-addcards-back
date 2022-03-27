@@ -41,7 +41,7 @@ class CreateSound:
             return None
         return response
 
-    def create_sound(self, text, AWS_KEY: dict):
+    def create_sound(self, text: dict):
         task_id = self.polly_task(text)
         url_file_sound = self.get_url_sound(task_id)
         return url_file_sound

@@ -15,9 +15,9 @@ class MethodHandler:
 
         response = {}
         if text_en:
-            response['en'] = text_en
+            response['en'] = text_en.capitalize()
         if text_es:
-            response['es'] = text_es
+            response['es'] = text_es.capitalize()
         if text_ipa:
             response['ipa'] = text_ipa
         if url_file_polly:
